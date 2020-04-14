@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FCC Node URL Shortener</title>
+</head>
+<body>
+<h1>FCC Node Project: URL Shortener</h1>
+<h2>User Stories</h2>
+<ol>
+    <li>
+        I can POST a URL to <code>&lt;base-url&gt;/api/shorturl/new</code> and I will receive a shortened URL in the
+        JSON response.
+        <br>
+        Example: <code>{"original_url": "https://varunbarad.com", "short_url": 1}</code>
+    </li>
+    <li>
+        If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com(/more/routes)</code> format,
+        the JSON response will contain an error like <code>{"error":"invalid URL"}</code>
+        <br>
+        HINT: To be sure that the submitted url points to a valid site you can use the function <code>dns.lookup(host,
+        cb)</code> from the <code>dns</code> core module.
+    </li>
+    <li>
+        When I visit the shortened URL, it will redirect me to my original link.
+    </li>
+</ol>
+
+<h2>Short URL Creation</h2>
+<p>Example: <code>POST &lt;base-url&gt;/api/shorturl/new</code> - <code>https://varunbarad.com</code></p>
+<form action="api/shorturl/new" method="post">
+    <label for="url_input">URL to be shortened</label>
+    <input id="url_input" type="text" name="url" value="https://varunbarad.com">
+    <input type="submit" value="Post URL">
+</form>
+
+<hr>
+<p>by <a href="https://varunbarad.com">Varun Barad</a></p>
+
+<style>
+    body {
+        text-align: center;
+        max-width: 40vw;
+        margin: auto;
+        font-size: 1.2rem;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    form {
+        border: solid 1px black;
+        border-radius: 5px;
+        margin: 10px auto;
+        padding: 20px;
+        max-width: 600px;
+    }
+
+    label {
+        margin-right: 10px;
+    }
+
+    input {
+        padding: 5px;
+    }
+
+    input[type=text] {
+        width: 220px;
+        text-align: center;
+    }
+</style>
+</body>
+</html>
